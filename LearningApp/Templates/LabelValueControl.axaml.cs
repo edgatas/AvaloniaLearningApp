@@ -5,20 +5,25 @@ namespace LearningApp.Templates
 {
 	public class LabelValueControl : TemplatedControl
 	{
-		private static readonly StyledProperty<string> LabelProperty = AvaloniaProperty.Register<LabelValueControl, string>(nameof(LabelText), "Label");
+		// DISCLAIMER: Registered variable must be public even though IDE want to change it to private.
+		// DISCLAIMER: Registered variable must have the same name as public property, but added Property at the end. Good luck finding somewhere where that is specified.
+		public static readonly StyledProperty<string> LabelTextProperty = AvaloniaProperty.Register<LabelValueControl, string>(nameof(LabelText), "Label");
 
 		public string LabelText
 		{
-			get => GetValue(LabelProperty);
-			set => SetValue(LabelProperty, value);
+			get => GetValue(LabelTextProperty);
+			set => SetValue(LabelTextProperty, value);
 		}
 
-		private static readonly StyledProperty<string> ValueProperty = AvaloniaProperty.Register<LabelValueControl, string>(nameof(ValueText), "Value");
+		// DISCLAIMER: Registered variable must be public even though IDE want to change it to private.
+		// DISCLAIMER: Registered variable must have the same name as public property, but added Property at the end. Good luck finding somewhere where that is specified.
+		public static readonly StyledProperty<string> ValueTextProperty = AvaloniaProperty.Register<LabelValueControl, string>(nameof(ValueText), "Value");
 
 		public string ValueText
 		{
-			get => GetValue(ValueProperty);
-			set => SetValue(ValueProperty, value);
+			get => GetValue(ValueTextProperty);
+			set => SetValue(ValueTextProperty, value);
 		}
+		
 	}
 }

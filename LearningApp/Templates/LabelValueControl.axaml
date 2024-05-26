@@ -1,35 +1,37 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:LearningApp.Templates">
-	<Design.PreviewWith>
-		<controls:LabelValueControl />
-	</Design.PreviewWith>
+    <Design.PreviewWith>
+        <StackPanel>
+            <controls:LabelValueControl />
+            <controls:LabelValueControl />
+            <controls:LabelValueControl />
+        </StackPanel>
+    </Design.PreviewWith>
 
-	<Style Selector="controls|LabelValueControl">
-		<!-- Set Defaults -->
-		<Setter Property="Foreground" Value="White"></Setter>
-		<Setter Property="Template">
-			<ControlTemplate>
+    <Style Selector="controls|LabelValueControl">
+        <!-- Set Defaults -->
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
 
-				<Border
-					Background="DarkGreen"
-					CornerRadius="10"
-					Padding="10,10,10,0"
-				>
-					<StackPanel>
-						<Label
-							x:Name="Label"
-							FontSize="18"
-						/>
-						<!--<TextBlock
-							x:Name="Value"
-							Content="{TemplateBinding ValueProperty}"
-						/>-->
-					</StackPanel>
+                <Border
+                    Background="DarkGreen"
+                    CornerRadius="10"
+                    Padding="10,0,10,10">
+                    <StackPanel>
+                        <Label
+                            x:Name="TemplateLabel"
+                            Content="{TemplateBinding LabelText}"/>
+                        <TextBox
+                            x:Name="TemplateValue"
+                            Text="{TemplateBinding ValueText}"/>
+                        
+                    </StackPanel>
 
-				</Border>
+                </Border>
 
-			</ControlTemplate>
-		</Setter>
-	</Style>
+            </ControlTemplate>
+        </Setter>
+    </Style>
 </Styles>
